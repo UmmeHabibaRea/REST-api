@@ -91,5 +91,5 @@ app.get('/api/courses/:id',(req,res)=>{
     if (!course) return res.status(404).send('The course with the given id was not found.');
     res.send(course);
 });
-//const port = process.env.PORT || 3000;
+
 app.listen(PORT, () => console.log(`listening on port ...`));
