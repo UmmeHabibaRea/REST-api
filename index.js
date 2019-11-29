@@ -15,17 +15,17 @@ mongoose.connect(dbConfig.url, {
     process.exit();
 });
 const app = express();
-const mongoose = require('mongoose');
+
 mongoose.Promise = global.Promise;
 
-mongoose.connect(dbConfig.url, {
-    useNewUrlParser: true
-}).then(() => {
-    console.log("Successfully connected to the database");    
-}).catch(err => {
-    console.log('Could not connect to the database. Exiting now...', err);
-    process.exit();
-});
+// mongoose.connect(dbConfig.url, {
+//     useNewUrlParser: true
+// }).then(() => {
+//     console.log("Successfully connected to the database");    
+// }).catch(err => {
+//     console.log('Could not connect to the database. Exiting now...', err);
+//     process.exit();
+// });
 app.use(express.json());
 
 const courses = [
@@ -92,8 +92,4 @@ app.get('/api/courses/:id',(req,res)=>{
     res.send(course);
 });
 //const port = process.env.PORT || 3000;
-<<<<<<< HEAD
-app.listen(3000, () => console.log(`listening on port ...`));
-=======
 app.listen(PORT, () => console.log(`listening on port ...`));
->>>>>>> 732f747973f398f645edf6dab7661fea1108e9f9
