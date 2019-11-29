@@ -2,6 +2,17 @@ const Joi = require('joi');
 const express = require('express');
 const PORT = process.env.PORT || 5000;
 const app = express();
+const mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
+
+mongoose.connect(dbConfig.url, {
+    useNewUrlParser: true
+}).then(() => {
+    console.log("Successfully connected to the database");    
+}).catch(err => {
+    console.log('Could not connect to the database. Exiting now...', err);
+    process.exit();
+});
 app.use(express.json());
 
 const courses = [
