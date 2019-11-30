@@ -29,9 +29,9 @@ mongoose.Promise = global.Promise;
 app.use(express.json());
 
 const courses = [
-    {id: 1, name: 'Abir'},
-    {id: 2, name: 'Mursalin'},
-    {id: 3, name: 'Kawsar'},
+    {id: 1, name: 'Course1'},
+    {id: 2, name: 'Course2'},
+    {id: 3, name: 'Course3'},
 
 ];
 
